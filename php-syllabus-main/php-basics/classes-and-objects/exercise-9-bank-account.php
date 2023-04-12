@@ -1,4 +1,5 @@
-<?php include 'functions.php';
+<?php declare (strict_types=1);
+include 'functions.php';
 
 //## Exercise #9
 //Finish [bank-account.php](./exercise-9-bank-account.php)
@@ -51,9 +52,8 @@ class BankAccount
 
     public function deposit($deposit)
     {
-        var_dump($deposit);
-        $this->totalDeposited += intval($deposit);
-        $this->balance += intval($deposit);
+        $this->totalDeposited += $deposit;
+        $this->balance += $deposit;
     }
 
     public function accMonthsOpened()

@@ -1,4 +1,4 @@
-<?php
+<?php declare (strict_types=1);
 
 //Create a class Product that represents a product sold in a shop.
 //A product has a price, amount and name.

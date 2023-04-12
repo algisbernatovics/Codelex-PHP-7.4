@@ -1,4 +1,4 @@
-<?php
+<?php declare (strict_types=1);
 
 //The questions in this exercise all deal with a class Dog that you have to program from scratch.
 //

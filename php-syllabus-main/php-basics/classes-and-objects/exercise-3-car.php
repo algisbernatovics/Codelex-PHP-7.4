@@ -57,12 +57,12 @@ class Odometer
     protected int $mileage;
     protected int $counter = 0;
 
-    public function __construct($mileage)
+    public function __construct(int $mileage)
     {
         $this->mileage = $mileage;
     }
 
-    public function increaseMileage($fuelGauge)
+    public function increaseMileage(object $fuelGauge)
     {
         $this->counter++;
         $this->mileage += 1;
@@ -74,23 +74,35 @@ class Odometer
     public function reportMileage(): int
     {
         return $this->mileage;
-
     }
 }
 
 $fuelGauge = new fuelGauge(70);
 $odometer = new odometer(360000);
+$Drive = new Car($fuelGauge, $odometer);
 
-do {
-    echo PHP_EOL;
-    echo 'Fuel level:' . $fuelGauge->reportFuelLevel() . 'L' . PHP_EOL;
+class Car
+{
+    protected object $fuelGauge;
+    protected object $odometer;
 
-    $odometer->increaseMileage($fuelGauge);
+    public function __construct($fuelGauge, $odometer)
+    {
+        $this->fuelGauge = $fuelGauge;
+        $this->odometer = $odometer;
+        do {
+            sleep(1);
+            system('clear');
+            echo PHP_EOL;
+            echo 'Fuel level:' . $this->fuelGauge->reportFuelLevel() . 'L' . PHP_EOL;
 
-    echo 'Odometer:' . $odometer->reportMileage() . 'Km' . PHP_EOL;
+            $this->odometer->increaseMileage($this->fuelGauge);
 
-} while ($fuelGauge->reportFuelLevel() > 0);
-echo 'Fuel Tank Empty !' . PHP_EOL;
+            echo 'Odometer:' . $this->odometer->reportMileage() . 'Km' . PHP_EOL;
+        } while ($this->fuelGauge->reportFuelLevel() > 0);
+        echo 'Fuel Tank Empty !' . PHP_EOL;
+    }
+}
 
 
 

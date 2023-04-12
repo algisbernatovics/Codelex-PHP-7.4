@@ -1,4 +1,6 @@
-<?php include 'functions.php';
+<?php declare (strict_types=1);
+
+include 'functions.php';
 
 ## Exercise #8
 
@@ -73,13 +75,13 @@ class BankAccount
         $this->balance = $this->balance + $this->balance * $monthlyRate;
     }
 
-    public function withdrawn($withdrawn)
+    public function withdrawn(int $withdrawn)
     {
         $this->totalWithdrawn -= $withdrawn;
         $this->balance -= $withdrawn;
     }
 
-    public function deposit($deposit)
+    public function deposit(int $deposit)
     {
         $this->totalDeposited += $deposit;
         $this->balance += $deposit;
