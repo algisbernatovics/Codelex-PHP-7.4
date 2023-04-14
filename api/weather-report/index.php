@@ -21,7 +21,7 @@ $choice = (int)(readline('Enter favourite City By number:'));
 
 while (!$choice == 0 && $choice >= count($cities)) {
     $choice = (int)(readline('Enter correct city by number:'));
-};
+}
 
 $city = $cities[$choice];
 $apikey = '9b023939292af51079afe14264490ab6';
@@ -39,7 +39,7 @@ $promise = $client->sendAsync($request)->then(function ($response) {
     echo PHP_EOL;
     echo 'and the wind speed is ' . $weatherArray['wind']['speed'] . " m/s.";
     echo PHP_EOL;
-    
+
 });
 $promise->wait();
 
