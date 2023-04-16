@@ -1,8 +1,1 @@
 /api/weather-report/vendor/
-/api/weather-report/vendor/composer.lock
-
-/api/open-report/vendor/
-/api/open-report/vendor/composer.lock
-
-/examples/composer-autoload/vendor/
-/examples/composer-autoload/composer.lock
