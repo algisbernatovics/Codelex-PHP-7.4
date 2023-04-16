@@ -1,5 +1,5 @@
 <?php
-$testvar = 'Test Variable';
+$testvar = 'report Variable';
 var_dump(isset($testvar));
 var_dump($testvar);
 
