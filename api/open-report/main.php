@@ -1,26 +1,11 @@
-<?php
+<?php declare(strict_types=1);
 
 require_once 'vendor/autoload.php';
 
-use App\report;
+$limit = '500';
+$RESOURCE_ID = '25e80bf3-f107-4ab4-89ef-251b5b9374e9&limit=' . $limit;
+$searchPhrase = '';
 
-//require_once 'app/report.php';
-//$search = (int)(readline('Search For:'));
-
-$search = 'S80';
-
-$reportObj = new report($search);
-$reportArr = (json_decode($reportObj->getBody(), true));
-
-for ($i = 0; $i < count($reportArr["result"]["records"]); $i++) {
-    echo PHP_EOL . PHP_EOL . 'Number:' . $i . PHP_EOL;
-    foreach ($reportArr["result"]["records"][$i] as $key => $value) {
-
-        echo $key . ':' . ':' . $value . PHP_EOL;
-    }
-
-}
-
-
-
-
+$response = new App\request($searchPhrase, $RESOURCE_ID);
+$content = new \App\showContent($response->getRes());
+$content->showIt();

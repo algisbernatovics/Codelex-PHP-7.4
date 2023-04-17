@@ -1,10 +1,11 @@
 {
   "autoload": {
     "psr-4": {
-      "App\\": "app/"
+      "App\\": "App/"
     }
   },
   "require": {
-    "guzzlehttp/guzzle": "^7.5"
+    "guzzlehttp/guzzle": "^7.5",
+    "halaxa/json-machine": "^1.1"
   }
 }
