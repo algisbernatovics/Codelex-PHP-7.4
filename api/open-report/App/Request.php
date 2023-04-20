@@ -30,7 +30,7 @@ class request
         $this->res = Items::fromStream($phpStream);
     }
 
-    public function getRes()
+    public function getRes():object
     {
         return ($this->res);
     }
